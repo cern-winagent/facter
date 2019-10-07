@@ -8,6 +8,8 @@ namespace plugin
     [PluginAttribute(PluginName = "Facter")]
     class IFacter : IInputPlugin
     {
+        public event EventHandler<MessageEventArgs> MessageEvent;
+
         public string Execute(JObject set)
         {
             var pathEnvVar = Environment.GetEnvironmentVariable("Path");
